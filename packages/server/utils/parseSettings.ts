@@ -145,6 +145,10 @@ export function parseCounterSettings(
                             break;
                         }
 
+                        case 'separator': {
+                            continue;
+                        }
+
                         default: {
                             values[setting.uniqueID] = value;
                             break;
