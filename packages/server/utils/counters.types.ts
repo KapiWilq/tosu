@@ -29,7 +29,8 @@ export type ISettingsType =
     | 'options'
     | 'commands'
     | 'textarea'
-    | 'password';
+    | 'password'
+    | 'separator';
 
 export interface ICounter {
     _downloaded?: boolean;
