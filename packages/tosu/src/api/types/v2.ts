@@ -1,3 +1,4 @@
+import { KeyOverlayButton } from '@/states/types';
 import { CalculateMods } from '@/utils/osuMods.types';
 
 export type ApiAnswer = TosuAPi | { error?: string };
@@ -380,27 +381,15 @@ export interface Combo2 {
 
 export interface TosuPreciseAnswer {
     currentTime: number;
-    keys: KeyOverlay;
+    keys: KeyOverlayButton[];
     hitErrors: number[];
     tourney: PreciseTourney[];
 }
 
 export interface PreciseTourney {
     ipcId: number;
-    keys: KeyOverlay;
+    keys: KeyOverlayButton[];
     hitErrors: number[];
-}
-
-interface KeyOverlay {
-    k1: KeyOverlayButton;
-    k2: KeyOverlayButton;
-    m1: KeyOverlayButton;
-    m2: KeyOverlayButton;
-}
-
-interface KeyOverlayButton {
-    isPressed: boolean;
-    count: number;
 }
 
 export interface Performance {

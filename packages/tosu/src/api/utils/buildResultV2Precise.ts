@@ -22,24 +22,7 @@ const buildTourneyData = (
 
             return {
                 ipcId: instance.ipcId,
-                keys: {
-                    k1: {
-                        isPressed: gameplay.keyOverlay.K1Pressed,
-                        count: gameplay.keyOverlay.K1Count
-                    },
-                    k2: {
-                        isPressed: gameplay.keyOverlay.K2Pressed,
-                        count: gameplay.keyOverlay.K2Count
-                    },
-                    m1: {
-                        isPressed: gameplay.keyOverlay.M1Pressed,
-                        count: gameplay.keyOverlay.M1Count
-                    },
-                    m2: {
-                        isPressed: gameplay.keyOverlay.M2Pressed,
-                        count: gameplay.keyOverlay.M2Count
-                    }
-                },
+                keys: gameplay.keyOverlay,
                 hitErrors: gameplay.hitErrors
             };
         });
@@ -62,24 +45,7 @@ export const buildResult = (instanceManager: InstanceManager): ApiAnswer => {
 
     return {
         currentTime: global.playTime,
-        keys: {
-            k1: {
-                isPressed: gameplay.keyOverlay.K1Pressed,
-                count: gameplay.keyOverlay.K1Count
-            },
-            k2: {
-                isPressed: gameplay.keyOverlay.K2Pressed,
-                count: gameplay.keyOverlay.K2Count
-            },
-            m1: {
-                isPressed: gameplay.keyOverlay.M1Pressed,
-                count: gameplay.keyOverlay.M1Count
-            },
-            m2: {
-                isPressed: gameplay.keyOverlay.M2Pressed,
-                count: gameplay.keyOverlay.M2Count
-            }
-        },
+        keys: gameplay.keyOverlay,
         hitErrors: gameplay.hitErrors,
         tourney: buildTourneyData(instanceManager)
     };
